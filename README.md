@@ -10,6 +10,7 @@ su-03-gitdemo
 
 ### Workspace als Verzeichnis anlegen
 
+|Command|Explanation||
 |:--|:--|:--|
 |mkdir git-demo | bash | legt unterverzeichnis an|
 |cd git-demo/  | bash | "change directory" - wechselt in verzeichnis|
@@ -18,6 +19,8 @@ su-03-gitdemo
  
 ### Lokales Git Repository anlegen
 
+|Command|Explanation|
+|:--|:--|
 |    git init | legt git repository in unterverzeichnis .git an |
 |    ls -lart | listet alle dateien im langformat auf - so sieht man .-dateien |
 |    git status | zeigt an, welche Dateien nur im Workspace, oder Index / Staging area sind|
@@ -33,19 +36,21 @@ su-03-gitdemo
 |    git status||
 |    less .git/config| bash: less zeigt Inhalt der Config datei an| 
 
- ### Variante 1: mit vorhandenem Git-Repository verbinden
+### Variante 1: mit vorhandenem Git-Repository verbinden
 
+|Command|Explanation|
+|:--|:--|
 |    git remote add origin git@github.com:bkleinen/git-demo.git| remote repository, dass vorher auf github angelegt wurde, bekannt machen - die url von der github seite kopieren|
 |    less .git/config| das steht dann in der config!|
 |    git push origin master| Änderungen in das remote Rep. pushen|
-
-
 |    cd ..| bash: eine Verzeichnisebene höher|
 
 ### Variante 2: GitHub Repository Klonen
 
 - Zuerst auf Github neues repository anlegen, falls nicht mit einem schon vorhandenem gearbeitet werden soll 
 
+|Command|Explanation|
+|:--|:--|
 |    git clone git@github.com:htw-imi-info3/su-03-gitdemo.git | s.o. |
 |    ls | siehe da: su-03-gitdemo ist jetzt da|
 |    cd su-03-gitdemo/ | bash: wechsle in das verzeichnis|
@@ -55,6 +60,8 @@ su-03-gitdemo
  
 ### Demo mit zwei parallelen lokalen Repositories
 
+|Command|Explanation|
+|:--|:--|
 |    mv su-03-gitdemo/ su-03-gitdemo-personA| bash: mv - move nennt dateien um|
 |    cd su-03-gitdemo-personA/ ||
 |    subl . | irgendwas editieren|
@@ -64,8 +71,10 @@ su-03-gitdemo
 |    git lg1||
 |    git push origin master||
 
- #### jetzt das selbe remote rep nochmal klonen, in ein anderes unterverzeichnis, dort änderung machen
+#### jetzt das selbe remote rep nochmal klonen, in ein anderes unterverzeichnis, dort änderung machen
  
+|Command|Explanation|
+|:--|:--|
 |    cd ..||
 |    git clone git@github.com:htw-imi-info3/su-03-gitdemo.git su-03-gitdemo-personB|| 
 |    ls||
@@ -78,8 +87,10 @@ su-03-gitdemo
 |    git push origin master||
 |    cd ..||
 
- #### von A aus holen
+#### von A aus holen
 
+|Command|Explanation|
+|:--|:--|
 |    cd su-03-gitdemo-personA||
 |    ls||
 |    less added-by-a.md| - änderung noch nicht da|
@@ -88,6 +99,9 @@ su-03-gitdemo
 
  
 #### Arbeiten mit einem branch
+
+|Command|Explanation|
+|:--|:--|
 |    git checkout -b freitagseinkauf| neuen branch anlegen und auschecken|
 |    git branch| listet branches auf|
 |    subl freitagseinkauf.md||
@@ -107,6 +121,8 @@ su-03-gitdemo
 
 #### neuen Branch von local repository B aus holen
 
+|Command|Explanation|
+|:--|:--|
 | cd /Users/kleinen/Dropbox/info3/code/git-demo/class/su-03-gitdemo-personB/ ||
 | git pull --rebase origin master | master holen mit rebase|
 | git lg1 ||
@@ -117,18 +133,22 @@ su-03-gitdemo
 
 #### neuen branch erst holen, dann auschecken -> master bleibt unverändert
 
+|Command|Explanation|
+|:--|:--|
 | git fetch origin freitagseinkauf | holt den branch nur in das lokale repository, nicht in den workspace|
 | git lg1 ||
 | git checkout freitagseinkauf ||
 
 #### und Nochmal von A aus...
 
- |    git lg1||
- |    git pull origin master||
- |    git lg1||
- |    git checkout freitagseinkauf||
- |    ls||
- |    subl freitagseinkauf.md||
- |    git commit -am "change in Branch F."||
- |    git push origin freitagseinkauf||
- |    git checkout master||
+|Command|Explanation|
+|:--|:--|
+|    git lg1||
+|    git pull origin master||
+|    git lg1||
+|    git checkout freitagseinkauf||
+|    ls||
+|    subl freitagseinkauf.md||
+|    git commit -am "change in Branch F."||
+|    git push origin freitagseinkauf||
+|    git checkout master||
