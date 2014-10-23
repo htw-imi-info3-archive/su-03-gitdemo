@@ -10,10 +10,11 @@ su-03-gitdemo
 
 ### Workspace als Verzeichnis anlegen
 
+|:--|:--|:--|
 |    mkdir git-demo | bash | legt unterverzeichnis an|
 |    cd git-demo/  | bash | "change directory" - wechselt in verzeichnis|
-|    ls | list files in directory|
-|    subl einkaufsliste.md | neue Datei editieren (subl -> Sublime editor)|
+|    ls | list files in directory||
+|    subl einkaufsliste.md | neue Datei editieren (subl -> Sublime editor)||
  
 ### Lokales Git Repository anlegen
 
