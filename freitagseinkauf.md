@@ -1,2 +1,3 @@
 Hirse
 Haferbrei
+Kartoffeln
